@@ -30,10 +30,9 @@ Make sure you have the following installed on your machine:
 ### Installation
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/yourusername/SearchSphere.git
+   git clone https://github.com/Pranjal-Deo/RealTime-Search-Engine.git
 
+Live Demo
 
-
-   Live at https://realtime-search-engine-fz3r.onrender.com
+Check out the live version of the application at https://realtime-search-engine-fz3r.onrender.com.
