@@ -1,0 +1,59 @@
+body {
+   background: linear-gradient(135deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff);
+   height: 100vh; /* Full viewport height */
+   margin: 0; /* Remove default margin */
+   font-family: Arial, sans-serif;
+   color: #333; /* Darker text color for contrast */
+}
+
+.container {
+   max-width: 800px;
+   margin: 0 auto;
+   text-align: center;
+   padding: 20px;
+   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+   border-radius: 15px; /* Rounded corners */
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.gradient-text {
+   background: linear-gradient(45deg, #000000, #434343, #7d7d7d); /* Dark gradient colors */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-size: 2.5rem;
+   margin-bottom: 20px;
+}
+
+.search-bar {
+   position: relative;
+   display: inline-block;
+}
+
+#searchQuery {
+   width: 400px; /* Increased width of the search bar */
+   padding: 15px; /* Increased padding for better aesthetics */
+   border: 1px solid #ccc;
+   border-radius: 20px;
+   font-size: 18px; /* Increased font size */
+}
+
+#searchIcon {
+   margin-left: 10px; /* Add space between input and icon */
+   cursor: pointer;
+   color: #007BFF; /* Icon color */
+   font-size: 20px; /* Size of the icon */
+   vertical-align: middle; /* Align icon vertically with the input */
+}
+
+.results {
+   margin-top: 20px;
+}
+
+.result-item {
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px 0;
+   background-color: #f9f9f9; /* Light gray background for results */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}

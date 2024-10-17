@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="gradient-text">Real-Time Search</h1> <!-- Added gradient class -->
+        <div class="search-bar">
+            <input type="text" id="searchQuery" placeholder="Type to search...">
+            <i class="fas fa-search" id="searchIcon"></i> <!-- Search Icon after input -->
+        </div>
+        <div class="results" id="searchResults"></div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        document.getElementById('searchIcon').addEventListener('click', () => {
+            const query = document.getElementById('searchQuery').value;
+            if (query) { // Only search if there's a query
+                socket.emit('search', query);
+            }
+        });
+
+        socket.on('searchResults', (results) => {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>'; // Display no results message
+            } else {
+                results.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <h2>${result.title}</h2>
+                        <a href="${result.link}" target="_blank">${result.link}</a>
+                        <p>${result.snippet}</p>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
