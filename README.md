@@ -1,4 +1,4 @@
-# SearchSphere
+# RealTime-Search-Engine
 
 **SearchSphere** is a real-time search application that utilizes the Google Custom Search API to provide instant search results. This application features a sleek, modern design with a user-friendly interface, allowing users to quickly find information without refreshing the page.
 
